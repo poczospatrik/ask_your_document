@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask Your Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Chatbot</h1>
+        </header>
+
+        <form id="uploadForm" method="POST" action="/" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="file" style="display: none;" onchange="this.form.submit(); document.getElementById('statusMessage').innerText = 'Feldolgozas folyamatban...';">
+            <button type="button" onclick="document.getElementById('fileInput').click()">Fajl feltoltése</button> 
+        </form>
+        <div class="status">
+            {% if status_message %}
+            <p id="statusMessage">{{ status_message }}</p>
+            {% endif %}
+        </div>
+
+        
+        <div class="chatbox-container">
+            <div class="chatbox" id="chatbox">
+                {% for question, answer in conversations %}
+                <p><strong>Kerdes:</strong> {{ question }}</p>
+                <p><strong>Valasz:</strong> {{ answer }}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="input-container">
+            <form method="POST" action="/">
+                <input type="text" id="userInput" name="question" class="input-field" placeholder="Irj be egy kerdest..." required>
+                <button type="submit" class="send-button">Kuldes</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* Alapstílus a bodyhoz */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Konteiner a chatbothoz */
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 500px;
+    max-width: 100%;
+}
+
+/* Header stílusok */
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Chatbox stílusok */
+.chatbox-container {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.chatbox {
+    padding: 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    /* Üzenetek stílusai */
+    .chatbox p {
+        margin: 0;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+        .chatbox p strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .chatbox p:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        .chatbox p:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+
+/* Input és gomb stílusok */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+    justify-content: center;
+    gap: 50px;
+}
+
+.input-field {
+    width: 60%;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.send-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .send-button:active {
+        background-color: #e0e0e0;
+    }
+
+#uploadForm {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+    /* Upload gomb stílusa */
+    #uploadForm button {
+        background-color: black;
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Hover és aktív állapot */
+        #uploadForm button:hover {
+            background-color: #333333;
+        }
+
+        #uploadForm button:active {
+            background-color: #e0e0e0;
+        }
+
+.status {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    font-size: 10px;
+}
